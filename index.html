@@ -5,10 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackit</title>
 
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-    <h1>Turn everyday frustrations into clever solutions—your personal AI hack generator is ready!</h1>
+    <header>
+      <h1>HackIt</h1>
+    </header>
+
+    <main>
+  <form id="hack-generator-form">
+    <input
+      type="text"
+      placeholder="Enter your everyday problem..."
+      autofocus
+      required
+      autocomplete="off"
+      class="instructions"
+      id="user-instructions"
+    />
+    <input type="submit" value="Generate Hack" />
+  </form>
+
+  <div id="hack-output">
+    <strong>Example Hack:</strong>  
+  <div id="hack"></div>
+  </div>
+</main>
 
     <footer>
       This AI project was coded by
@@ -26,6 +49,8 @@
       >.
     </footer>
 
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="src/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,203 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #272044;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeBg 8s infinite alternate ease-in-out;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  color: #3a2c7d;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+header h2 {
+  font-size: 20px;
+  color: #555;
+  font-weight: 400;
+}
+
+/* Main container */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers the form */
+  margin: 30px auto 40px;
+  width: 90%;
+  max-width: 500px; /* make the form container smaller */
+}
+
+/* Form */
+form {
+  width: 100%; /* use the container width */
+  padding: 20px;
+  background: #ffffffd9;
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(65, 50, 100, 0.1);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(65, 50, 100, 0.15);
+}
+
+form input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid rgba(39, 33, 66, 0.15);
+  border-radius: 50px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus {
+  outline: none;
+  border-color: #6a11cb;
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.3);
+}
+
+form input[type="submit"] {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(39, 33, 66, 0.2);
+}
+
+/* Hack Output */
+#hack-output {
+  margin: 20px auto 40px;
+  max-width: 700px;
+  font-size: 18px;
+  background: #fff;
+  padding: 25px;
+  border-left: 5px solid #6a11cb;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(39, 33, 66, 0.08);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease forwards;
+}
+
+#hack-output strong {
+  color: #6a11cb;
+  font-weight: 700;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 14px;
+  margin: 20px;
+  color: #444;
+}
+
+footer a {
+  color: #6a11cb;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #2575fc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBg {
+  0% {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #f9f7fe 0%, #e4dcfa 100%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  form input[type="text"],
+  form input[type="submit"] {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header h2 {
+    font-size: 18px;
+  }
+
+  #hack-output {
+    font-size: 16px;
+    padding: 20px;
+  }
+}
